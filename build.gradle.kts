@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
     id("me.philippheuer.configuration") version "0.4.5"
     kotlin("jvm") version "1.7.10"
@@ -12,27 +10,16 @@ projectConfiguration {
     javaVersion.set(JavaVersion.VERSION_17)
 }
 
-group = "me.philipp.heuer"
-version = "1.0-SNAPSHOT"
-
-repositories {
-    mavenCentral()
-}
-
 dependencies {
     // cli
     implementation("org.jetbrains.kotlinx:kotlinx-cli:0.3.5")
 
-    // kotlin test
+    // logging
+    implementation("org.slf4j:slf4j-api:2.0.0")
+    implementation("org.apache.logging.log4j:log4j:2.18.0")
+
+    // test
     testImplementation(kotlin("test"))
-}
-
-tasks.test {
-    useJUnitPlatform()
-}
-
-tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "17"
 }
 
 application {

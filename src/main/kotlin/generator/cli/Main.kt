@@ -1,9 +1,15 @@
 package generator.cli;
 
-fun main(args: Array<String>) {
-    println("Hello World!")
+import generator.cli.cmd.Generate
+import generator.cli.cmd.Version
+import kotlinx.cli.ArgParser
+import kotlinx.cli.ArgType
+import kotlinx.cli.ExperimentalCli
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+@OptIn(ExperimentalCli::class)
+fun main(args: Array<String>) {
+    val parser = ArgParser("codegen", strictSubcommandOptionsOrder = true)
+    val loglevel by parser.option(ArgType.String, "loglevel", "l", "LogLevel")
+    parser.subcommands(Generate(), Version())
+    parser.parse(args)
 }
