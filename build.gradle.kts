@@ -19,7 +19,7 @@ dependencies {
 
     // logging
     implementation("org.slf4j:slf4j-api:2.0.0")
-    implementation("org.apache.logging.log4j:log4j:2.18.0")
+    implementation("ch.qos.logback:logback-classic:1.4.0")
 
     // test
     testImplementation(kotlin("test"))

@@ -9,7 +9,7 @@ class CLITest {
 
     @Test
     fun generateCmd() {
-        main(arrayOf("gen", "--input", "files/petstore.yaml", "--output", "generated"))
+        main(arrayOf("gen", "--input", "./files/petstore.yaml", "--output", "generated", "--generator", "java-feign"))
     }
 
     @Test
