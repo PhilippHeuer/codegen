@@ -14,6 +14,9 @@ dependencies {
     // cli
     implementation("org.jetbrains.kotlinx:kotlinx-cli:0.3.5")
 
+    // openapi spec
+    implementation("io.swagger.parser.v3:swagger-parser:2.1.2")
+
     // logging
     implementation("org.slf4j:slf4j-api:2.0.0")
     implementation("org.apache.logging.log4j:log4j:2.18.0")

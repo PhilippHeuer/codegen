@@ -2,7 +2,10 @@ package generator.cli
 
 import kotlin.test.Test
 
-class TestCase {
+/**
+ * CLI Tests
+ */
+class CLITest {
 
     @Test
     fun generateCmd() {

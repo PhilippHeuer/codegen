@@ -4,6 +4,7 @@ import kotlinx.cli.ArgType
 import kotlinx.cli.ExperimentalCli
 import kotlinx.cli.Subcommand
 import org.slf4j.LoggerFactory
+import java.io.File
 
 @OptIn(ExperimentalCli::class)
 class Generate: Subcommand("gen", "Generate") {
@@ -14,5 +15,8 @@ class Generate: Subcommand("gen", "Generate") {
 
     override fun execute() {
         log.atInfo().addKeyValue("input", input).addKeyValue("output", output).log("cmd.generate")
+
+        val content = File(input).readLines()
+        println(content)
     }
 }
